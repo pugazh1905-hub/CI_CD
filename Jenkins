@@ -1,1 +1,31 @@
+pipeline {
+    agent any
 
+    stages {
+
+        stage('Clone Repository') {
+            steps {
+                git branch: 'main', url: 'https://github.com/pugazh1905-hub/CI_CD.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo "Building the project..."
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo "Running tests..."
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo "Deploying application..."
+            }
+        }
+
+    }
+}
